@@ -161,7 +161,7 @@ router.post('/create', checkIfAuthenticated, async (req, res) => {
 })
 
 // display the form that displays a product for editing
-router.get('/:product_id/update', async (req, res) => {
+router.get('/:product_id/update',checkIfAuthenticated, async (req, res) => {
 
     // get all categories
     const choices = await getAllCategories();
@@ -209,7 +209,7 @@ router.get('/:product_id/update', async (req, res) => {
 
 })
 
-router.post('/:product_id/update', async (req, res) => {
+router.post('/:product_id/update',checkIfAuthenticated, async (req, res) => {
 
     // retrieve all the tags
     const allTags = await getAllTags();
@@ -270,7 +270,7 @@ router.post('/:product_id/update', async (req, res) => {
     })
 })
 
-router.get('/:product_id/delete', async (req, res) => {
+router.get('/:product_id/delete',checkIfAuthenticated, async (req, res) => {
     const product = await getProductByID(req.params.product_id);
 
     res.render('products/delete', {
@@ -278,7 +278,7 @@ router.get('/:product_id/delete', async (req, res) => {
     })
 })
 
-router.post('/:product_id/delete', async (req, res) => {
+router.post('/:product_id/delete',checkIfAuthenticated, async (req, res) => {
     // fetch the product that we want to delete
     const product = await getProductByID(req.params.product_id);
 

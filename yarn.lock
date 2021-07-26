@@ -2256,6 +2256,11 @@ unpipe@1.0.0, unpipe@~1.0.0:
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
 
+up@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/up/-/up-1.0.2.tgz#25f87686fdac510f67444fe8b7bd1588b5595267"
+  integrity sha1-Jfh2hv2sUQ9nRE/ot70ViLVZUmc=
+
 update-notifier@^4.1.0:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/update-notifier/-/update-notifier-4.1.3.tgz#be86ee13e8ce48fb50043ff72057b5bd598e1ea3"
