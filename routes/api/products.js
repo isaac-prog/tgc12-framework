@@ -51,5 +51,12 @@ router.post('/', async(req,res)=>{
     })
 })
 
+router.get('/:product_id', async(req,res)=>{
+    let products = await productDataLayer.getAllProducts();
+    // retrieve the product from the database
+    let productId = await productDataLayer.getProductByID(req.params.product_id);
+     res.json(productId.toJSON())
+})
+
 
 module.exports = router;

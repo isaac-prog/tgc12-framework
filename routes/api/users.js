@@ -21,7 +21,36 @@ const getHashedPassword = (password) => {
 
 const { User, BlacklistedToken } = require('../../models');
 const { checkIfAuthenticatedJWT } = require('../../middlewares');
+const { format } = require('path');
 
+// register the user
+router.post('/register',async(req,res)=>{
+    const user = new User({
+        'username': format.data.username,
+        'password': getHashedPassword(form.data.password),
+        'email': form.data.email
+    })
+    if (user.get('username') == form.data.username){
+        res.status(401);
+        res.json({
+            'message': "username taken"
+        })
+    }
+    else if (user.get('email') == form.data.email){
+            res.status(401);
+            res.json({
+                'message': "email taken"
+            })
+    }
+    else{
+    await user.save();
+    res.redirect('/login')
+    res.json({
+        'message': "Registration successful"
+    })
+    }
+})
+    
 // login the user
 router.post('/login', async(req,res)=>{
     // get the user by their email address

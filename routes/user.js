@@ -42,7 +42,7 @@ router.post('/register', async (req, res) => {
             })
             await user.save();
             req.flash("success_messages", "You have signed up successfully!");
-            res.redirect('/login')
+            res.redirect('/users/login')
         },
         'error': async() => {
             req.flash("Password does not match :(");
